@@ -50,4 +50,5 @@ main .hero img {
 .hero-digital.hero h1 {
     font-weight: 300;
     font-size: var(--heading-font-size-xxxl);
+    margin-block: 17vh;
 }
