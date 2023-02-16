@@ -262,14 +262,21 @@ export function decorateSections(main) {
 
     /* process section metadata */
     const sectionMeta = section.querySelector('div.section-metadata');
+    var sectionTarget = section;
     if (sectionMeta) {
       const meta = readBlockConfig(sectionMeta);
       Object.keys(meta).forEach((key) => {
-        if (key === 'style') {
-          const styles = meta.style.split(',').map((style) => toClassName(style.trim()));
-          styles.forEach((style) => section.classList.add(style));
+        /* custom logic for adding target selector for non default-content styling */
+        if (key === 'target') {
+          const targetClass = meta.target.split(',')[0];
+          sectionTarget = main.querySelector(targetClass);
         } else {
-          section.dataset[toCamelCase(key)] = meta[key];
+          if (key === 'style') {
+            const styles = meta.style.split(',').map((style) => toClassName(style.trim()));
+            styles.forEach((style) => sectionTarget.classList.add(style));
+          } else {
+            sectionTarget.dataset[toCamelCase(key)] = meta[key];
+          }
         }
       });
       sectionMeta.parentNode.remove();
