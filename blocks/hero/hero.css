@@ -47,8 +47,72 @@ main .hero img {
     height: 100%;
 }
 
+.hero-header {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  padding-inline: 4.4vh;
+}
+
+.hero-header.columns img {
+  max-height:90px;
+  width: auto;
+  margin-inline-start: 80px;
+}
+
+.hero-header .button-container {
+  text-align: right;
+}
+
+.hero-header .button-container a {
+    background-color: none;
+    border: 1px solid var(--background-color);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 13px 40px;
+}
+
 .hero-digital.hero h1 {
     font-weight: 300;
     font-size: var(--heading-font-size-xxxl);
     margin-block: 17vh;
+}
+
+.hero-menu {
+    margin-block-start: -90px;
+    background-color: rgba(25, 200, 215,0.5);
+}
+
+.hero-menu ul {
+
+}
+
+.hero-menu li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+}
+
+.hero-menu li a {
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 28px 20px 28px 20px !important;
+    cursor: pointer !important;
+    display: inline-block;
+}
+
+.hero-menu li:last-child:after {
+    width:0;
+}
+
+.hero-menu li:after {
+    position: relative;
+    left: 4px;
+    display: inline-block;
+    content: " ";
+    color: #ffffff;
+    background-color: #FFF;
+    width: 1px;
+    height: 12px;
 }

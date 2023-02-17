@@ -20,15 +20,15 @@
   --text-color: #000;
 
   /* fonts */
-  --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --body-font-family: 'Lato', sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
   --digital-font-family: 'Lato', sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 18px;
-  --body-font-size-xs: 16px;
+  --body-font-size-m: 18px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
 
   /* heading sizes */
   --heading-font-size-xxxl: 60px;
@@ -45,7 +45,7 @@
 }
 
 body {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-s);
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.6;
@@ -115,7 +115,7 @@ a.button:any-link, button {
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: 10px 30px;
   text-align: center;
   font-style: normal; 
   font-weight: 600;
@@ -126,7 +126,6 @@ a.button:any-link, button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
@@ -164,9 +163,9 @@ main input:hover {
   border: 1px solid var(--text-color);
 }
 
-main .section {
+/* main .section {
   padding: 30px 16px;
-}
+} */
 
 main pre {
   background-color: var(--overlay-background-color);
@@ -207,9 +206,9 @@ main img {
 }
 
 @media (min-width: 600px) {
-  main .section {
+  /* main .section {
     padding: 30px 32px;
-  }  
+  }   */
 }
 
 @media (min-width: 900px) {
@@ -224,7 +223,7 @@ main img {
   }
   
   .section > div {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: auto;
   }
 }
