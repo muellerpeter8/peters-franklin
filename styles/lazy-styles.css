@@ -1,1 +1,14 @@
 /* below the fold CSS goes here */
+
+.lineheight32 p {
+    line-height: var(--body-line-height-m);
+}
+
+.partners {
+    padding-block: 5%;
+}
+
+.partners h4 {
+    text-transform: uppercase;
+    font-size: var(--body-font-size-s);
+}
