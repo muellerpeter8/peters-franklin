@@ -5,7 +5,7 @@ export default function decorate(block) {
 
 const firsttab = document.querySelector('.verticaltabs > div:first-child > div:first-child');
 const tabs = document.querySelectorAll('.verticaltabs > div > div:first-child');
-const info = document.querySelectorAll('.verticaltabs > div > div:last-child');
+const infos = document.querySelectorAll('.verticaltabs > div > div:last-child');
 
 function activateFirstTab() {
   firsttab.classList.add('active');
@@ -14,19 +14,10 @@ function activateFirstTab() {
 activateFirstTab();
 
 function tabSwitcher(tab) {
-  let i;
-  for (i = 0; i < tabs.length; i++) {
-    tabs[i].classList.remove('active');
-  }
-  for (i = 0; i < info.length; i++) {
-    info[i].classList.remove('active');
-  }
+  tabs.forEach(tab => tab.classList.remove('active'))
+  infos.forEach(info => info.classList.remove('active'))
   tab.classList.add('active');
   tab.nextElementSibling.classList.add('active');
 }
 
-tabs.forEach(tab =>
-  tab.addEventListener('click', e => {
-    tabSwitcher(tab);
-  })
-);
+tabs.forEach(tab => tab.addEventListener('click', e => {tabSwitcher(tab);}));
