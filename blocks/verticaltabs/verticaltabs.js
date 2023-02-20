@@ -14,7 +14,6 @@ function activateFirstTab() {
 activateFirstTab();
 
 function tabSwitcher(tab) {
-  const activeTab = document.querySelector('.verticaltabs > div > div:first-child.active');
   let i;
   for (i = 0; i < tabs.length; i++) {
     tabs[i].classList.remove('active');
@@ -26,9 +25,8 @@ function tabSwitcher(tab) {
   tab.nextElementSibling.classList.add('active');
 }
 
-tabs.forEach(tab => 
+tabs.forEach(tab =>
   tab.addEventListener('click', e => {
-    
     tabSwitcher(tab);
   })
 );
