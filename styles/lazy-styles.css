@@ -12,3 +12,19 @@
     text-transform: uppercase;
     font-size: var(--body-font-size-s);
 }
+
+.columns.midheading h2 {
+    color: var(--color-blue-1);
+    font-size: var(--heading-font-size-xl2);
+    line-height: 38px;
+    margin-block: 10% 5%;
+}
+
+
+
+@media (min-width: 900px) {
+    .columns.midheading h2 {
+        line-height: 50px;
+        margin-block: 12% 7%;
+    }
+}

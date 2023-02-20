@@ -1,0 +1,120 @@
+.verticaltabs {
+    max-width: 1100px;
+    padding-block-end: 25%;
+    padding-inline: 20px;
+    position: relative;
+}
+.verticaltabs > div {
+}
+
+.verticaltabs > div > div:first-child {
+    width: 100%;
+    font-size: 20px;
+    line-height: 22px;
+    margin-block-start: 20px;
+    color: #666666;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.verticaltabs > div > div:first-child.active {
+    color: #00ACC4B5;
+}
+
+.verticaltabs > div > div:last-child {
+    display: none;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 300;
+    width: 100%;
+    color: var(--color-blue-2);
+}
+
+.verticaltabs > div > div:last-child.active {
+    display: block;
+}
+
+.verticaltabs > div > div:last-child img {
+    display: none;
+    position: absolute;
+    top: auto;
+    width: 58%;
+    left: 58%;
+    bottom: -10%;
+    z-index: -1;
+}
+
+@media (min-width: 768px) {
+    .verticaltabs {
+        padding-block-end: 55%;
+    }
+    .verticaltabs > div > div:first-child {
+        width: 33%;
+        font-size: 26px;
+        line-height: 32px;
+        margin-block-start: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-block;
+    }
+    .verticaltabs > div > div:last-child {
+        font-size: 22px;
+        line-height: 34px;
+        padding-bottom: 30px;
+        left: 40%;
+        position: absolute;
+        top: 10px;
+        width: 43%;
+    }
+    .verticaltabs > div > div:last-child img {
+        display: block;
+    }
+}
+
+@media (min-width: 900px) {
+    .verticaltabs {
+        padding-block-end: 35%;
+    }
+    .verticaltabs > div > div:last-child img {
+        top: auto;
+        width: 58%;
+        left: 58%;
+        bottom: -10%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .verticaltabs {
+        max-width: 1240px;
+    }
+    .verticaltabs > div > div:last-child {
+        width: 48%;
+    }
+    .verticaltabs > div > div:last-child img {
+        top: 40%;
+        width: 58%;
+        left: 58%;
+        right: 0;
+    }
+}
+
+@media (min-width: 1400px) {
+    .verticaltabs > div > div:last-child img {
+        width: auto;
+        top: -60px;
+       left: 42%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .verticaltabs > div > div:last-child img {
+        left: 60%;
+    }
+}
+
+@media (min-width: 1800px) {
+    .verticaltabs > div > div:last-child img {
+        left: 75%;
+    }
+}

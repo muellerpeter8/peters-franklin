@@ -19,6 +19,8 @@
   --highlight-background-color: #ccc;
   --highlight2-background-color: #F3F5F4;
   --text-color: #17263E;
+  --color-blue-1: #004068;
+  --color-blue-2: #002140;
 
   /* fonts */
   --body-font-family: 'Lato', sans-serif;
@@ -33,9 +35,10 @@
   --body-line-height-m: 32px;
 
   /* heading sizes */
-  --heading-font-size-xxxl: 60px;
+  --heading-font-size-xxxl: 40px;
   --heading-font-size-xxl: 48px;
   --heading-font-size-xl: 40px;
+  --heading-font-size-xl2: 26px;
   --heading-font-size-l: 32px;
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
@@ -169,10 +172,6 @@ main input:hover {
   border: 1px solid var(--text-color);
 }
 
-/* main .section {
-  padding: 30px 16px;
-} */
-
 main pre {
   background-color: var(--overlay-background-color);
   padding: 1em;
@@ -212,16 +211,17 @@ main img {
 }
 
 @media (min-width: 600px) {
-  /* main .section {
-    padding: 30px 32px;
-  }   */
+  :root {
+    --heading-font-size-xxxl: 48px;
+  }
 }
 
 @media (min-width: 900px) {
   :root {
-    --heading-font-size-xxxl: 80px;
+    --heading-font-size-xxxl: 60px;
     --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
+    --heading-font-size-xl: 45px;
+    --heading-font-size-xl2: 45px;
     --heading-font-size-l: 36px;
     --heading-font-size-m: 32px;
     --heading-font-size-s: 26px;
@@ -231,6 +231,12 @@ main img {
   .section > div {
     max-width: 1240px;
     margin: auto;
+  }
+}
+
+@media (min-width: 1300px) {
+  :root {
+    --heading-font-size-xxxl: 80px;
   }
 }
 
@@ -249,13 +255,28 @@ main .section.highlight2 {
   padding-block-end: 6%;
 }
 
-.subtitle > div {
-  padding: 5% 11% 3%;
+.columns.subtitle > div {
+  padding: 10% 3% 7%;
   margin-block: auto;
 }
 
-.subtitle div, .subtitle p {
+.columns.subtitle div, .subtitle p {
   font-size: var(--heading-font-size-s);
   line-height: var(--heading-font-size-xl);
   font-weight: 300;
+}
+
+@media (min-width: 600px) {
+  
+}
+
+@media (min-width: 900px) {
+  .columns.subtitle > div {
+    padding: 5% 11% 3%;
+    margin-block: auto;
+  }
+}
+
+@media (min-width: 1300px) {
+  
 }

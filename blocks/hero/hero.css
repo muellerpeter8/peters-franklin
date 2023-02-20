@@ -52,13 +52,16 @@ main .hero img {
   top: 100px;
   left: 0;
   right: 0;
-  padding-inline: 4.4vh;
+  padding-inline: 1.4vh;
+}
+
+.hero-header.columns > div {
+    padding-inline: 0;
 }
 
 .hero-header.columns img {
   max-height:90px;
   width: auto;
-  margin-inline-start: 80px;
 }
 
 .hero-header .button-container {
@@ -68,28 +71,40 @@ main .hero img {
 .hero-header .button-container a {
     background-color: transparent;
     border: 1px solid var(--background-color);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
-    padding: 13px 40px;
+    padding: 9px 20px;
+    margin: 0;
+}
+
+main .hero-digital.hero picture {
+    left: -230px;
 }
 
 .hero-digital.hero h1 {
     font-weight: 300;
-    font-size: var(--heading-font-size-xxxl);
+    font-size: 28px;
     margin-block: 17vh;
 }
 
+.hero-digital.hero h1 strong {
+    font-size: var(--heading-font-size-xxxl);
+}
+
 .hero-menu {
-    margin-block-start: -90px;
+    margin-block-start: -180px;
     background-color: rgba(25, 200, 215,0.5);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-menu ul {
     margin: 0;
+    padding: 0;
 }
 
 .hero-menu li {
-    display: inline-block;
+    display: block;
     list-style-type: none;
     padding: 0;
 }
@@ -97,22 +112,68 @@ main .hero img {
 .hero-menu li a {
     text-transform: uppercase;
     color: #ffffff;
-    padding: 28px 20px 28px 20px !important;
-    cursor: pointer !important;
+    padding: 3px 20px;
+    cursor: pointer;
     display: inline-block;
+    font-size: 14px;
+}
+
+.hero-menu li:after {
+    position: relative;
+    left: 2px;
+    display: inline-block;
+    content: " ";
+    color: #ffffff;
+    background-color: #FFF;
+    width: 0px;
+    height: 12px;
 }
 
 .hero-menu li:last-child:after {
     width:0;
 }
 
-.hero-menu li:after {
-    position: relative;
-    left: 4px;
-    display: inline-block;
-    content: " ";
-    color: #ffffff;
-    background-color: #FFF;
-    width: 1px;
-    height: 12px;
+@media (min-width: 600px) {
+    .hero-header.columns > div {
+        padding-inline: 20px;
+    }
+    .hero-header .button-container a {
+        font-size: 20px;
+        padding: 13px 40px;
+    }
+    main .hero-digital.hero picture {
+        left: 0;
+    }
+    .hero-digital.hero h1 {
+        font-size: var(--heading-font-size-xxxl);
+    }
+}
+
+@media (min-width: 900px) {
+    .hero-header {
+      padding-inline: 4.4vh;
+    }
+    .hero-header.columns img {
+        margin-inline-start: 80px;
+    }
+    .hero-menu {
+        margin-block-start: -90px;
+        text-align: center;
+    }
+    .hero-menu li {
+        display: inline-block;
+    }
+    .hero-menu li a {
+        padding: 28px 7px;
+    }
+    .hero-menu li:after {
+        width: 1px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .hero-menu li a {
+        padding: 28px 20px;
+        font-size: 16px;
+    }
 }
