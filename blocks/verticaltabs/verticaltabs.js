@@ -14,10 +14,10 @@ function activateFirstTab() {
 activateFirstTab();
 
 function tabSwitcher(tab) {
-  tabs.forEach(tab => tab.classList.remove('active'))
-  infos.forEach(info => info.classList.remove('active'))
+  tabs.forEach(tabn => { tabn.classList.remove('active') });
+  infos.forEach(info => { info.classList.remove('active') });
   tab.classList.add('active');
   tab.nextElementSibling.classList.add('active');
 }
 
-tabs.forEach(tab => tab.addEventListener('click', e => {tabSwitcher(tab);}));
+tabs.forEach(tab => { tab.addEventListener('click', e => { tabSwitcher(tab); }) });
