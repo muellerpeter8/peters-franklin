@@ -1,10 +1,57 @@
 .columns > div {
     display: flex;
     flex-direction: column;
+    padding-inline: 20px;
+}
+
+.top.columns > div {
+    align-items: start;
 }
 
 .columns img {
     width: 100%;
+}
+
+.columns.nostack > div {
+    flex-direction: unset;
+}
+
+.columns.nostack > div > div {
+    flex: 1;
+}
+
+.columns.nostack > div > div:first-of-type {
+    margin-left: unset;
+}
+
+.columns.partnerstack > div {
+    flex-direction: unset;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
+.columns.partnerstack > div > div {
+    flex: unset;
+    width: 48%;
+}
+
+.columns.partnerstack > div > div:first-child {
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .columns.partnerstack > div {
+        align-items: center;
+        flex-direction: unset;
+    }
+
+    .columns.partnerstack > div > div {
+        flex: 1;
+    }
+
+    .columns.partnerstack > div > div:first-of-type {
+        margin-left: unset;
+    }
 }
 
 @media (min-width: 900px) {
