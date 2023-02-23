@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+.section > div.carousel-bgimg-wrapper {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding-block-end: 7%;
+}
+/* Slideshow container */
+.carousel-bgimg {
+    width: 100%;
+    position: relative;
+    height: 548px;
+    display: flex;
+}
+/* Hide the images by default */
+.carousel-bgimg > div {
+    display: none;
+    border-bottom: 10px solid #00cae7;
+    padding: 30px;
+    position: relative;
+    align-items: end;
+    width: 100%;
+}
+.carousel-bgimg > .activeSlide2 {
+    border-bottom: 10px solid #00cae7;
+}
+.carousel-bgimg > .activeSlide3 {
+    border-bottom: 10px solid #c5de01;
+}
+.carousel-bgimg > div > div {
+    min-height: 170px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+/* Next & previous buttons */
+.carousel-bgimg .prev, .carousel-bgimg .next {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+/* Position the "next button" to the right */
+.carousel-bgimg .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.carousel-bgimg .prev:hover, .carousel-bgimg .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* slide image */
+.carousel-bgimg img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+.carousel-bgimg > div > div:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(22,23,23,0) 0%, rgba(13,13,13,0.39) 35%, rgba(0,64,104,1) 100%);
+    z-index: 1;
+    display: block;
+}
+/* slide text */
+.carousel-bgimg > div > div p {
+    margin: 0;
+}
+.carousel-bgimg h3 {
+    color: var(--background-color);
+    font-size: 24px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+/* slide cta */
+.carousel-bgimg a.button.secondary {
+    color: var(--background-color);
+    border-color: var(--background-color);
+    border-width: 1px;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 10px 30px;
+    position: relative;
+    margin: 0;
+    z-index: 2;
+}
+/* The dots/bullets/indicators */
+.dotsCon {
+    text-align: center;
+    padding-block-start: 20px;
+}
+
+.dotsCon .dot {
+    border: none;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    padding: 0;
+    background-color: transparent;
+    border: 1px solid var(--color-blue-2);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.dotsCon .active {
+    background-color: var(--color-blue-2);
+}
+/* Fading animation */
+.carousel-bgimg > div {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {
+        opacity: 0.4;
+   }
+    to {
+        opacity: 1;
+   }
+}
+
+@media (min-width: 600px) {
+    .carousel-bgimg {
+        width: 130%;
+        margin-left: -15%;
+    }
+    /* Hide the images by default */
+    .carousel-bgimg > div {
+        width: 33%;
+    }
+    .carousel-bgimg > div {
+        border-bottom-color: #010544;
+    }
+}
