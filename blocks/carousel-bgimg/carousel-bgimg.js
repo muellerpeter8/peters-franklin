@@ -1,11 +1,11 @@
 (function () {
   'use strict';
   let screenWidth = window.outerWidth;
-  var onresize = function (e) {
+  let onresize = function (e) {
     screenWidth = e.target.outerWidth;
     showSlides();
-   };
-   window.addEventListener("resize", onresize);
+  };
+  window.addEventListener('resize', onresize);
   const slideParent = document.querySelector('.carousel-bgimg');
   const slides = document.querySelectorAll('.carousel-bgimg > div');
   addDotsCon();
@@ -26,7 +26,7 @@
     const dotsCon = document.querySelector('.dotsCon');
     slides.forEach((newdots, index) =>
       dotsCon.insertAdjacentHTML('beforeend', `<button class="dot" data-slide-number="${index + 1}" aria-controls="${index + 1}" aria-label="Slide Tab ${index + 1} of ${slides.length}"></button>`),
-    );}
+    ); }
 
   // Next/previous controls
   function plusSlides(n) {
@@ -49,16 +49,16 @@
 
     slideParent.prepend(slide1);
 
-    if (n > slides.length) { slideIndex = 1 };
+    if (n > slides.length) { slideIndex = 1; }
 
-    if (n < 1) {slideIndex = slidesLength};
+    if (n < 1) { slideIndex = slidesLength };
 
     slides.forEach(slide => { slide.style.display = 'none'; });
     slides.forEach(slide => {
       slide.classList.remove('activeSlide1');
       slide.classList.remove('activeSlide2');
       slide.classList.remove('activeSlide3');
-     });
+    });
 
     dots.forEach(dot => { dot.className = dot.className.replace(' active', ''); });
 
@@ -94,7 +94,7 @@
     dot.addEventListener('click', () => {
       const dotNumber = parseInt(dot.dataset.slideNumber);
       currentSlide(dotNumber);
-    }),);
+    }));
 
   // swipe detection
   let touchstartX = 0;
@@ -116,7 +116,7 @@
       plusSlides(-1);
     }
   }
-  
+
   gestureZone.addEventListener('touchend', function (event) {
     touchendX = event.changedTouches[0].screenX;
     handleGesture();
