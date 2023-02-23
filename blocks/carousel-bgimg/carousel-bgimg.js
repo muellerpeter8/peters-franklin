@@ -23,7 +23,7 @@
 
   function addDots() {
     const dotsCon = document.querySelector('.dotsCon');
-    slides.forEach((newdots, index) => dotsCon.insertAdjacentHTML('beforeend', `<button class="dot" data-slide-number="${index + 1}" aria-controls="${index + 1}" aria-label="Slide Tab ${index + 1} of ${slides.length}"></button>`), );
+    slides.forEach((newdots, index) => dotsCon.insertAdjacentHTML('beforeend', `<button class="dot" data-slide-number="${index + 1}" aria-controls="${index + 1}" aria-label="Slide Tab ${index + 1} of ${slides.length}"></button>`));
   }
 
   // Next/previous controls
