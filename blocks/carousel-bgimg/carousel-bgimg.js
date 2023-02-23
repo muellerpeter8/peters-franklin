@@ -1,7 +1,6 @@
 (function () {
-  'use strict';
   let screenWidth = window.outerWidth;
-  let onresize = function (e) {
+  const onresize = function (e) {
     screenWidth = e.target.outerWidth;
     showSlides();
   };
@@ -24,9 +23,8 @@
 
   function addDots() {
     const dotsCon = document.querySelector('.dotsCon');
-    slides.forEach((newdots, index) =>
-      dotsCon.insertAdjacentHTML('beforeend', `<button class="dot" data-slide-number="${index + 1}" aria-controls="${index + 1}" aria-label="Slide Tab ${index + 1} of ${slides.length}"></button>`),
-    ); }
+    slides.forEach((newdots, index) => dotsCon.insertAdjacentHTML('beforeend', `<button class="dot" data-slide-number="${index + 1}" aria-controls="${index + 1}" aria-label="Slide Tab ${index + 1} of ${slides.length}"></button>`), );
+  }
 
   // Next/previous controls
   function plusSlides(n) {
@@ -51,7 +49,7 @@
 
     if (n > slides.length) { slideIndex = 1; }
 
-    if (n < 1) { slideIndex = slidesLength };
+    if (n < 1) { slideIndex = slidesLength; }
 
     slides.forEach(slide => { slide.style.display = 'none'; });
     slides.forEach(slide => {
@@ -102,7 +100,7 @@
 
   const gestureZone = slideParent;
 
-  gestureZone.addEventListener('touchstart', function (event) {
+  gestureZone.addEventListener('touchstart', event => {
     touchstartX = event.changedTouches[0].screenX;
     event.preventDefault();
   }, false);
@@ -117,7 +115,7 @@
     }
   }
 
-  gestureZone.addEventListener('touchend', function (event) {
+  gestureZone.addEventListener('touchend', event => {
     touchendX = event.changedTouches[0].screenX;
     handleGesture();
     event.preventDefault();
